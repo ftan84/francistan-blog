@@ -3,5 +3,6 @@ ENV PYTHONUNBUFFERED 1
 RUN mkdir /francistanblog
 WORKDIR /francistanblog
 ADD requirements.txt /francistanblog/
+RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 ADD . /francistanblog/
