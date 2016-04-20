@@ -9,6 +9,9 @@ class Author(models.Model):
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
 
+    def __str__(self):
+        full_name = self.first_name + ' ' + self.last_name
+        return full_name
 
 class Post(models.Model):
     """Post Model
@@ -24,6 +27,9 @@ class Post(models.Model):
     status = models.CharField(max_length=200,
                               choices=STATUS_CHOICES,
                               default='private')
-    created = models.DateTimeField('date created')
-    published = models.DateTimeField('date published')
+    created = models.DateTimeField('date created', auto_now_add=True)
+    published = models.DateTimeField('date published', null=True, blank=True)
     body = models.TextField()
+
+    def __str__(self):
+        return self.title
