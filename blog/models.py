@@ -23,6 +23,8 @@ class Post(models.Model):
         ('public', 'Public')
     )
     title = models.CharField(max_length=200)
+    # slug = models.SlugField(unique=True)
+    slug = models.SlugField()
     author = models.ForeignKey(Author, on_delete=models.PROTECT)
     status = models.CharField(max_length=200,
                               choices=STATUS_CHOICES,
