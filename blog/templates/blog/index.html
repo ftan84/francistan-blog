@@ -1,0 +1,18 @@
+{% if latest_posts %}
+    <ul>
+    {% for post in latest_posts %}
+        <li>
+            <h2><a href="{% url 'blog:detail' post.slug %}">{{ post.title }}</a></h2>
+            <h3>{{ post.created }}</h3>
+            <p>
+                {{ post.body|slice:':300' }}
+                {% if post.body|length > 300 %}
+                    <a href="{% url 'blog:detail' post.slug %}">...more</a>
+                {% endif %}
+            </p>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No posts available.</p>
+{% endif %}
