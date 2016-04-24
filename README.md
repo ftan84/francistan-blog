@@ -1,4 +1,4 @@
-# Francis Tan's Blog
+# Francis Tan's Blog 0.0.2 (2016-04-19)
 Blog site for me to post content of things that I learn and a home for my
 projects.
 
